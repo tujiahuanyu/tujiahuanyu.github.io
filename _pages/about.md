@@ -33,7 +33,7 @@ Feel free to contact me at [tujiahuanyu [at] mail.nankai.edu.cn](mailto:tujiahua
 
 ### Guess before Retrieval (GBR)
 
-**Agent long-term memory retrieval** · *Under review at SCIS*
+**Agent long-term memory retrieval** · *Under review*
 
 GBR augments user queries with memory-style signals and fuses retrieved contexts to improve long-term recall, without retraining the retriever.
 
