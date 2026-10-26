@@ -1,58 +1,120 @@
 ---
 permalink: /
 title: ""
-excerpt: ""
+excerpt: "Jiahuanyu Tu, master's student at Nankai University. Research interests: LLM agent memory, experience reuse, RAG, and self-evolving agents."
 author_profile: true
-redirect_from: 
+redirect_from:
   - /about/
   - /about.html
 ---
 
-{% if site.google_scholar_stats_use_cdn %}
-{% assign gsDataBaseUrl = "https://cdn.jsdelivr.net/gh/" | append: site.repository | append: "@" %}
-{% else %}
-{% assign gsDataBaseUrl = "https://raw.githubusercontent.com/" | append: site.repository | append: "/" %}
-{% endif %}
-{% assign url = gsDataBaseUrl | append: "google-scholar-stats/gs_data_shieldsio.json" %}
+<span class="anchor" id="about-me"></span>
 
-<span class='anchor' id='about-me'></span>
+I am **Jiahuanyu Tu (涂佳欢语)**, a first-year master's student in Computer Technology at **Nankai University**, where I also received my bachelor's degree in Information Security in June 2026.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. Suspendisse condimentum, libero vel tempus mattis, risus risus vulputate libero, elementum fermentum mi neque vel nisl. Maecenas facilisis maximus dignissim. Curabitur mattis vulputate dui, tincidunt varius libero luctus eu. Mauris mauris nulla, scelerisque eget massa id, tincidunt congue felis. Sed convallis tempor ipsum rhoncus viverra. Pellentesque nulla orci, accumsan volutpat fringilla vitae, maximus sit amet tortor. Aliquam ultricies odio ut volutpat scelerisque. Donec nisl nisl, porttitor vitae pharetra quis, fringilla sed mi. Fusce pretium dolor ut aliquam consequat. Cras volutpat, tellus accumsan mattis molestie, nisl lacus tempus massa, nec malesuada tortor leo vel quam. Aliquam vel ex consectetur, vehicula leo nec, efficitur eros. Donec convallis non urna quis feugiat.
+My research focuses on **long-term memory, experience reuse, and execution control for LLM agents**. I am interested in how agents can retrieve useful past experiences, reuse successful behaviors, and adapt through continued interaction. My current interests include:
 
-My research interest includes neural machine translation and computer vision. I have published more than 100 papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'>google scholar citations <strong><span id='total_cit'>260000+</span></strong></a> (You can also use google scholar badge <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>).
+- **Agent Memory:** bridging the gap between user queries and stored memories to improve long-term recall.
+- **Experience Reuse:** learning reusable action chains from interaction histories and deciding when to execute or stop them.
+- **Retrieval-Augmented Generation:** organizing and retrieving evidence for grounded reasoning, including multi-hop questions.
+- **Self-Evolving Agents:** exploring experience-driven adaptation and improvement over time.
 
+Feel free to contact me at [tujiahuanyu [at] mail.nankai.edu.cn](mailto:tujiahuanyu@mail.nankai.edu.cn).
 
-# 🔥 News
-- *2022.02*: &nbsp;🎉🎉 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2022.02*: &nbsp;🎉🎉 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+<h1 id="research">📝 Research</h1>
 
-# 📝 Publications 
+<div class="paper-box">
+  <div class="paper-box-image">
+    <div class="method-figure" role="img" aria-label="GBR overview: supplement the original query with a memory-style retrieval signal, then fuse retrieved memories while preserving order and removing duplicates.">
+      <span class="method-kicker">GUESS BEFORE RETRIEVAL</span>
+      <div class="method-node">User query</div>
+      <div class="method-arrow" aria-hidden="true">↓</div>
+      <div class="method-pair"><span>Original query</span><span>Memory-style signal</span></div>
+      <div class="method-arrow" aria-hidden="true">↓</div>
+      <div class="method-node">Retrieve · Fuse · Deduplicate</div>
+      <span class="method-caption">Query augmentation for agent memory</span>
+    </div>
+  </div>
+  <div class="paper-box-text" markdown="1">
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2016</div><img src='images/500x300.png' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
+### Guess before Retrieval (GBR)
 
-[Deep Residual Learning for Image Recognition](https://openaccess.thecvf.com/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf)
+**Agent long-term memory retrieval** · *Under review at SCIS*
 
-**Kaiming He**, Xiangyu Zhang, Shaoqing Ren, Jian Sun
+I designed and implemented a model-agnostic method that supplements the original query with a memory-style retrieval signal. It reuses existing encoders and memory indexes, and combines auxiliary retrieval with order-preserving deduplication and sub-query gating where appropriate.
 
-[**Project**](https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=DhtAFkwAAAAJ&citation_for_view=DhtAFkwAAAAJ:ALROH1vI_8AC) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+I integrated GBR with **A-MEM, SimpleMem, and LightMem** on LoCoMo, with further LightMem evaluation on LongMemEval-S. Reported average F1 improvements on LoCoMo are **3.37–7.00 percentage points** for A-MEM and **1.20–2.64 points** for SimpleMem.
+
+  </div>
 </div>
+
+<div class="paper-box">
+  <div class="paper-box-image">
+    <div class="method-figure method-figure-green" role="img" aria-label="JitRL extension overview: retrieve action chains from memory, check applicability, then continue the chain or return control to the action language model.">
+      <span class="method-kicker">ACTION-CHAIN MEMORY</span>
+      <div class="method-node">Interaction history</div>
+      <div class="method-arrow" aria-hidden="true">↓</div>
+      <div class="method-node">Retrieve chain · Check conditions</div>
+      <div class="method-arrow" aria-hidden="true">↓</div>
+      <div class="method-pair"><span>Continue chain</span><span>Return to action LLM</span></div>
+      <span class="method-caption">Experience reuse with execution control</span>
+    </div>
+  </div>
+  <div class="paper-box-text" markdown="1">
+
+### Action-Chain Memory and Execution Control
+
+**An extension of JitRL** · *Ongoing research, October 2026–present*
+
+I study reusable action chains with applicability conditions, local goals, and environment rewards. My work covers condition matching, ordered continuation, switching thresholds, cooldown after failures, and fallback to the action LLM.
+
+In a preliminary **Jericho Zork1** comparison using qwen3.7-flash, with **50 episodes per condition**, mean environment score increased from **15.62 to 35.20** against a local JitRL baseline with corrected discounted returns. Memory accumulated across episodes; broader task coverage and ablation studies remain future work.
+
+  </div>
 </div>
 
-- [Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet](https://github.com), A, B, C, **CVPR 2020**
+### Research Discussions
 
-# 🎖 Honors and Awards
-- *2021.10* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2021.09* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+**TaskGraph-RAG — relation-aware retrieval for multi-hop question answering** · *October 2026*
 
-# 📖 Educations
-- *2019.06 - 2022.04 (now)*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2015.09 - 2019.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+I read and discussed a colleague-led study on entity–sentence–passage indexing, semantic role labeling, and entity-anchored multi-hop retrieval. My involvement was in exchanging research ideas and suggesting improvements to figure layout and manuscript organization. The manuscript was submitted to the October ARR cycle.
 
-# 💬 Invited Talks
-- *2021.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2021.03*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  \| [\[video\]](https://github.com/)
+<h1 id="projects">💻 Projects</h1>
 
-# 💻 Internships
-- *2019.05 - 2020.02*, [Lorem](https://github.com/), China.
+### RheaChoice — Skin Health Consultation Agent
+
+*July 2024* · **Frontend interaction, multi-session management, and integration** · [GitHub](https://github.com/ya-yaa/RheaChoice)
+
+RheaChoice is an interactive skin health consultation demo built with GLM-4, LangChain, FastAPI/LangServe, and MySQL/Text-to-SQL. My contribution focused on:
+
+- Adapting the HTML/CSS/JavaScript frontend to connect the product introduction, chat interface, and conversation history.
+- Implementing session creation and switching, mapping conversation entries to backend `session_id` values, and restoring message displays.
+- Integrating streaming responses and testing the frontend with the model, database, and agent backend.
+
+<h1 id="education">📖 Education</h1>
+
+- **September 2026–present** · **Nankai University**<br>
+  Master's student in Computer Technology.
+- **September 2022–June 2026** · **Nankai University**<br>
+  Bachelor's degree in Information Security.
+
+<h1 id="honors">🎖 Honors and Awards</h1>
+
+- **Outstanding Graduate**, Nankai University.
+- **Gongneng Scholarship, First Prize**, Nankai University — awarded twice.
+- **Merit Student**, Nankai University — awarded twice.
+- **Culture and Sports Scholarship, First Prize**, Nankai University.
+- **Second Prize, Tianjin Division**, Contemporary Undergraduate Mathematical Contest in Modeling, 2024.
+- **Outstanding Paper**, Shenzhen Cup Mathematical Modeling Challenge, 2024.
+- **Second Prize, Natural Sciences Academic Paper Category**, 7th Nankai University President's Cup Innovation and Entrepreneurship Competition, 2025.
+- **Third Prize, Outstanding Undergraduate Research Project**, Nankai University, 2025.
+- **Champion, Women's Singles, Regular University Division**, Tianjin University Tennis Championships.
+- **Fifth Place, Women's Singles, Regular University Division**, National University Tennis Championships Finals.
+
+<h1 id="skills">🛠 Skills</h1>
+
+- **Agent / LLM:** long-term memory, experience reuse, RAG, vector retrieval, LangChain, agent harnesses, and execution control.
+- **Programming / Engineering:** Python, C++, FastAPI, MySQL, Git, Linux, HTML, CSS, and JavaScript.
+- **Languages:** Chinese; English academic reading and writing (CET-4: 564; CET-6: 517).
+
+<p class="homepage-note">Last updated: October 2026 · Built with <a href="https://github.com/RayeRen/acad-homepage.github.io">AcadHomepage</a> and GitHub Pages.</p>
