@@ -35,9 +35,9 @@ Feel free to contact me at [tujiahuanyu [at] mail.nankai.edu.cn](mailto:tujiahua
 
 **Agent long-term memory retrieval** · *Under review at SCIS*
 
-I designed and implemented a model-agnostic method that supplements the original query with a memory-style retrieval signal. It reuses existing encoders and memory indexes, and combines auxiliary retrieval with order-preserving deduplication and sub-query gating where appropriate.
+GBR augments user queries with memory-style signals and fuses retrieved contexts to improve long-term recall, without retraining the retriever.
 
-I integrated GBR with **A-MEM, SimpleMem, and LightMem** on LoCoMo, with further LightMem evaluation on LongMemEval-S. Reported average F1 improvements on LoCoMo are **3.37–7.00 percentage points** for A-MEM and **1.20–2.64 points** for SimpleMem.
+**LoCoMo:** A-MEM average F1 **+3.37–7.00 points**.
 
   </div>
 </div>
