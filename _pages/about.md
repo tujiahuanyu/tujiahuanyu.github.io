@@ -25,15 +25,9 @@ Feel free to contact me at [tujiahuanyu [at] mail.nankai.edu.cn](mailto:tujiahua
 
 <div class="paper-box">
   <div class="paper-box-image">
-    <div class="method-figure" role="img" aria-label="GBR overview: supplement the original query with a memory-style retrieval signal, then fuse retrieved memories while preserving order and removing duplicates.">
-      <span class="method-kicker">GUESS BEFORE RETRIEVAL</span>
-      <div class="method-node">User query</div>
-      <div class="method-arrow" aria-hidden="true">↓</div>
-      <div class="method-pair"><span>Original query</span><span>Memory-style signal</span></div>
-      <div class="method-arrow" aria-hidden="true">↓</div>
-      <div class="method-node">Retrieve · Fuse · Deduplicate</div>
-      <span class="method-caption">Query augmentation for agent memory</span>
-    </div>
+    <a href="images/gbr-overview.png" target="_blank" rel="noopener noreferrer" title="View the full GBR overview" style="display:block;width:100%;">
+      <img src="images/gbr-overview.png" alt="Overview of GBR and Planning-Aware GBR, showing memory-style signal prediction, query retrieval, signal-guided retrieval, context fusion, and planning gates." width="2200" height="816" style="display:block;width:100%;height:auto;" />
+    </a>
   </div>
   <div class="paper-box-text" markdown="1">
 
