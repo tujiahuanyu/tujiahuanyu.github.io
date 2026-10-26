@@ -1,7 +1,7 @@
 ---
 permalink: /
 title: ""
-excerpt: "Jiahuanyu Tu, master's student at Nankai University. Research interests: LLM agent memory, experience reuse, RAG, and self-evolving agents."
+excerpt: "Jiahuanyu Tu, master's student at Nankai University. Research interests: Agent Memory, Self-Evolution, Recursive Self-Improvement (RSI), and Retrieval-Augmented Generation (RAG)."
 author_profile: true
 redirect_from:
   - /about/
@@ -12,12 +12,12 @@ redirect_from:
 
 I am **Jiahuanyu Tu (涂佳欢语)**, a first-year master's student in Computer Technology at **Nankai University**, where I also received my bachelor's degree in Information Security in June 2026.
 
-My research focuses on **long-term memory, experience reuse, and execution control for LLM agents**. I am interested in how agents can retrieve useful past experiences, reuse successful behaviors, and adapt through continued interaction. My current interests include:
+My research interests include:
 
-- **Agent Memory:** bridging the gap between user queries and stored memories to improve long-term recall.
-- **Experience Reuse:** learning reusable action chains from interaction histories and deciding when to execute or stop them.
-- **Retrieval-Augmented Generation:** organizing and retrieving evidence for grounded reasoning, including multi-hop questions.
-- **Self-Evolving Agents:** exploring experience-driven adaptation and improvement over time.
+- **Agent Memory**
+- **Self-Evolution**
+- **Recursive Self-Improvement (RSI)**
+- **Retrieval-Augmented Generation (RAG)**
 
 Feel free to contact me at [tujiahuanyu [at] mail.nankai.edu.cn](mailto:tujiahuanyu@mail.nankai.edu.cn).
 
@@ -47,37 +47,6 @@ I integrated GBR with **A-MEM, SimpleMem, and LightMem** on LoCoMo, with further
 
   </div>
 </div>
-
-<div class="paper-box">
-  <div class="paper-box-image">
-    <div class="method-figure method-figure-green" role="img" aria-label="JitRL extension overview: retrieve action chains from memory, check applicability, then continue the chain or return control to the action language model.">
-      <span class="method-kicker">ACTION-CHAIN MEMORY</span>
-      <div class="method-node">Interaction history</div>
-      <div class="method-arrow" aria-hidden="true">↓</div>
-      <div class="method-node">Retrieve chain · Check conditions</div>
-      <div class="method-arrow" aria-hidden="true">↓</div>
-      <div class="method-pair"><span>Continue chain</span><span>Return to action LLM</span></div>
-      <span class="method-caption">Experience reuse with execution control</span>
-    </div>
-  </div>
-  <div class="paper-box-text" markdown="1">
-
-### Action-Chain Memory and Execution Control
-
-**An extension of JitRL** · *Ongoing research, October 2026–present*
-
-I study reusable action chains with applicability conditions, local goals, and environment rewards. My work covers condition matching, ordered continuation, switching thresholds, cooldown after failures, and fallback to the action LLM.
-
-In a preliminary **Jericho Zork1** comparison using qwen3.7-flash, with **50 episodes per condition**, mean environment score increased from **15.62 to 35.20** against a local JitRL baseline with corrected discounted returns. Memory accumulated across episodes; broader task coverage and ablation studies remain future work.
-
-  </div>
-</div>
-
-### Research Discussions
-
-**TaskGraph-RAG — relation-aware retrieval for multi-hop question answering** · *October 2026*
-
-I read and discussed a colleague-led study on entity–sentence–passage indexing, semantic role labeling, and entity-anchored multi-hop retrieval. My involvement was in exchanging research ideas and suggesting improvements to figure layout and manuscript organization. The manuscript was submitted to the October ARR cycle.
 
 <h1 id="projects">💻 Projects</h1>
 
