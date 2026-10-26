@@ -1,23 +1,37 @@
-<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-<link rel="manifest" href="images/site.webmanifest">
-
-<meta name="msapplication-TileColor" content="#000000">
-<meta name="msapplication-TileImage" content="images/mstile-144x144.png?v=M44lzPylqQ">
-<meta name="msapplication-config" content="images/browserconfig.xml?v=M44lzPylqQ">
+<link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/161902739?v=4&amp;size=64">
 <meta name="theme-color" content="#ffffff">
-<link rel="stylesheet" href="assets/css/academicons.css"/>
+<link rel="stylesheet" href="assets/css/academicons.css">
 
-<script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); </script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-      processEscapes: true
-    }
-  });
-</script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script>
-
-<!-- end custom head snippets -->
+<style>
+  html { scroll-behavior: smooth; }
+  .page__content h1 { scroll-margin-top: 4.5rem; }
+  .page__content h3 { margin-top: 0.3rem; }
+  .paper-box { align-items: flex-start; }
+  .paper-box .paper-box-image { flex-shrink: 0; }
+  .method-figure {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 400px;
+    padding: 22px 20px 18px;
+    border: 1px solid #dce4ef;
+    border-radius: 5px;
+    background: #f5f8fd;
+    color: #254b7c;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  .method-kicker { display: block; margin-bottom: 18px; font-size: 11px; font-weight: 700; letter-spacing: 1.1px; }
+  .method-node, .method-pair span { padding: 10px 8px; border: 1px solid #c5d4e8; border-radius: 4px; background: #fff; font-size: 12px; line-height: 1.5; }
+  .method-pair { display: flex; gap: 8px; }
+  .method-pair span { flex: 1; }
+  .method-arrow { padding: 4px 0; font-size: 20px; line-height: 1.2; }
+  .method-caption { display: block; margin-top: 15px; font-size: 10px; line-height: 1.5; }
+  .method-figure-green { background: #f3f8f6; color: #2c6552; border-color: #d5e4dd; }
+  .method-figure-green .method-node, .method-figure-green .method-pair span { border-color: #c3d9ce; }
+  .homepage-note { margin-top: 2.5rem !important; padding-top: 1rem; border-top: 1px solid #eee; color: #73777b; font-size: 0.8em !important; }
+  @media (max-width: 767px) {
+    .paper-box .paper-box-image { order: 1; margin-bottom: 20px; }
+    .paper-box .paper-box-text { order: 2; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
